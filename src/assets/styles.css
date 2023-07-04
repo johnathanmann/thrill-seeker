@@ -1,3 +1,38 @@
 #vue{
     height: 100vh;
+    width: 50vw;
+}
+
+.carousel-item{
+    border-radius: 15px;
+    position: absolute;
+    height: 80vh;
+    width: 45vw;
+}
+
+#vue img{
+    object-fit: cover;
+    height: 80vh;
+    width: 45vw;
+    border-radius: inherit;
+}
+
+#heart{
+    position: relative;
+    bottom: 50px;
+}
+
+#x{
+    position: relative;
+    bottom: 50px;
+}
+
+figcaption{
+    position: relative;
+    bottom: 150px
+}
+
+#buttons{
+    width: 45vw;
+    padding: 0px 40px;
 }

@@ -53,18 +53,22 @@ window.addEventListener("load", (event) => {
 newCoaster()
 });
   return (
-    <main className="container" id="vue">
-      <h1>{allValues.name}</h1>
+    <main className="container d-block" id="vue">
+      <nav><h1>ThrillSeeker</h1></nav>
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={allValues.main} className="d-block h-100" alt="..."/>
+            <img src={allValues.main} className="d-block" alt="..."/>
+            <figcaption>
+            <h1>{allValues.name}</h1>
+            <h2>{allValues.city}, {allValues.country}</h2>
+            </figcaption>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block h-100" alt="..."/>
+            <img src="..." className="d-block" alt="..."/>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block h-100" alt="..."/>
+            <img src="..." className="d-block" alt="..."/>
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -76,7 +80,10 @@ newCoaster()
           <span className="sr-only"></span>
         </a>
       </div>
-      <button onClick={() => newCoaster()}>New Coaster</button>
+      <section className="d-flex justify-content-between" id="buttons">
+        <button onClick={() => newCoaster()}  id="heart">Love</button>
+        <button onClick={() => newCoaster()}class="d-flex justify-content-end" id="x">Hate</button>
+      </section>
     </main>
   );
 }
