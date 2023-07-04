@@ -26,6 +26,9 @@ const newCoaster = (e) => {
     link:"" 
 })))}
 
+window.addEventListener("load", (event) => {
+newCoaster()
+});
   return (
     <main>
       <h1>{allValues.name}</h1>
