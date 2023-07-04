@@ -18,11 +18,11 @@ function App() {
     const response = await fetch('https://rcdb-api.vercel.app/api/coasters/random');
     // waits until the request completes...
     const coaster = await response.json();
-    if(coaster.name === "unknown" && coaster.city == '' && coaster.country == '' && coaster.make == '' && coaster.model == '' && coaster.arrangement == '' && coaster.status == '' && coaster.pictures.length < 2 == true ){
-      console.log("fail")
-      newCoaster()
+    if(coaster.name === 'unknown' && coaster.pictures.length >= 2 == false){
+      console.log(false, coaster)
+    } else {
+      console.log(true, coaster)
     }
-    // console.log(coaster, coaster.pictures.length < 2);
   }
 
 // const newCoaster = (e) => {
