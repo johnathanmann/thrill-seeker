@@ -89,3 +89,9 @@ z-index: none;
 .display-none{
     display: none;
 }
+
+@media (max-width: 769px) {
+    .carousel, #vue, .carousel img, #buttons{
+        width: 85vw;
+    }
+}
