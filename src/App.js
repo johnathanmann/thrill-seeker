@@ -20,35 +20,40 @@ function App() {
   });
 
   async function newCoaster() {
-    const response = await fetch('https://rcdb-api.vercel.app/api/coasters/random');
-    const coaster = await response.json().then({
-      
-    })
-    if(coaster.name === 'unknown' && coaster.pictures.length >= 3 == false){
-      console.log(false, coaster)
-      newCoaster()
-    } else {
-      try{
-        console.log(true, coaster,  coaster.pictures[0].url)
-      setAllValues(() => ({
-        name: coaster.name,
-        city: coaster.city,
-        country: coaster.country,
-        park: coaster.park.name,
-        make: coaster.make,
-        model: coaster.model,
-        arrangement: coaster.arrangement,
-        status: coaster.status,
-        link: "https://rcdb.com/"+coaster.link,
-        main: coaster.mainPicture.url,
-        image1: coaster.pictures[1].url,
-        image2: coaster.pictures[2].url,
-      }))
-      } catch(err){
-        console.log("error")
-        newCoaster()
+    console.log("click")
+    fetch('https://rcdb-api.vercel.app/api/coasters/random').then((response) => {
+      if (response.ok ) {
+        return response.json();
       }
-    }
+      throw new Error('Something went wrong');
+    })
+    .then((responseJson) => {
+      // Do something with the response
+      console.log(3 > responseJson.pictures.length,  responseJson.pictures.length)
+      if(3 > responseJson.pictures.length ){
+        console.log("Missing pictures")
+        newCoaster()
+      } else {
+        console.log(responseJson)
+        setAllValues(() => ({
+          name: responseJson.name,
+          city: responseJson.city,
+          country: responseJson.country,
+          park: responseJson.park.name,
+          make: responseJson.make,
+          model: responseJson.model,
+          arrangement: responseJson.arrangement,
+          status: responseJson.status,
+          link: "https://rcdb.com/"+responseJson.link,
+          main: responseJson.mainPicture.url,
+          image1: responseJson.pictures[1].url,
+          image2: responseJson.pictures[2].url,
+        }))
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+    });
   }
 
 useEffect(()=>{
@@ -58,6 +63,8 @@ useEffect(()=>{
   
   function fullyLoaded() {
     document.getElementById("loading").className = "fade-out";
+    document.getElementById("heart").className = "z-index";
+    document.getElementById("x").className = "z-index";
     newCoaster()
   }
 }, [])
@@ -89,8 +96,8 @@ useEffect(()=>{
         </Carousel.Item>
       </Carousel>
       <section className="d-flex justify-content-between" id="buttons">
-        <button onClick={() => newCoaster()}  id="heart">Love</button>
-        <button onClick={() => newCoaster()}id="x">Hate</button>
+        <button onClick={() => newCoaster()} id="heart">Love</button>
+        <button onClick={() => newCoaster()} id="x">Hate</button>
       </section>
       <div id="loading">Loading</div>
     </main>
