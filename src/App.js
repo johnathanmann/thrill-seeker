@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import "./assets/styles.css";
 import logo from "./assets/thrill-seeker-logo.png"
@@ -24,7 +24,7 @@ function App() {
     const coaster = await response.json().then({
       
     })
-    if(coaster.name == 'unknown' && coaster.pictures.length > 3 == false){
+    if(coaster.name === 'unknown' && coaster.pictures.length >= 3 == false){
       console.log(false, coaster)
       newCoaster()
     } else {
@@ -51,9 +51,17 @@ function App() {
     }
   }
 
-window.addEventListener("load", (event) => {
-newCoaster()
-});
+useEffect(()=>{
+  setTimeout(function() {    
+    fullyLoaded();
+    }, 2000);
+  
+  function fullyLoaded() {
+    document.getElementById("loading").className = "fade-out";
+    newCoaster()
+  }
+}, [])
+
   return (
     <main className="container d-block" id="vue">
       <nav><img src={logo} aly="Red roller coaster in the shape of a heart" /><h1>ThrillSeeker</h1></nav>
@@ -80,43 +88,11 @@ newCoaster()
           </figcaption>
         </Carousel.Item>
       </Carousel>
-      {/* <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={allValues.image1} className="d-block" alt={allValues.name}/>
-            <figcaption>
-            <h1>{allValues.name}</h1>
-            <h2>{allValues.city}, {allValues.country}</h2>
-            </figcaption>
-          </div>
-          <div className="carousel-item">
-          <img src={allValues.image1} className="d-block" alt={allValues.name}/>
-            <figcaption>
-            <h1>{allValues.name}</h1>
-            <h2>{allValues.city}, {allValues.country}</h2>
-            </figcaption>
-          </div>
-          <div className="carousel-item">
-          <img src={allValues.image2} className="d-block" alt={allValues.name}/>
-            <figcaption>
-            <h1>{allValues.name}</h1>
-            <h2>{allValues.city}, {allValues.country}</h2>
-            </figcaption>
-          </div>
-        </div>
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only"></span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only"></span>
-        </a>
-      </div> */}
       <section className="d-flex justify-content-between" id="buttons">
         <button onClick={() => newCoaster()}  id="heart">Love</button>
         <button onClick={() => newCoaster()}id="x">Hate</button>
       </section>
+      <div id="loading">Loading</div>
     </main>
   );
 }

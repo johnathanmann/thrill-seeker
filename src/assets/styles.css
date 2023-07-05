@@ -69,3 +69,18 @@ figcaption{
 .carousel-control-prev, .carousel-control-next {
 z-index: none;
 }
+
+#loading{
+    background-color: #000;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fade-out {
+    transition: opacity 5s;
+    opacity: 0;
+  }
