@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/thrill-seeker/static/css/main.92b84f04.css",
+    "main.js": "/thrill-seeker/static/js/main.72579010.js",
+    "index.html": "/thrill-seeker/index.html",
+    "main.92b84f04.css.map": "/thrill-seeker/static/css/main.92b84f04.css.map",
+    "main.72579010.js.map": "/thrill-seeker/static/js/main.72579010.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92b84f04.css",
+    "static/js/main.72579010.js"
+  ]
+}
