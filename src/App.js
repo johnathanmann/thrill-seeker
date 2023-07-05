@@ -1,6 +1,7 @@
 import { useState} from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import "./assets/styles.css";
+import logo from "./assets/thrill-seeker-logo.png"
 
 function App() {
   const [allValues, setAllValues] = useState({
@@ -23,7 +24,7 @@ function App() {
     const coaster = await response.json().then({
       
     })
-    if(coaster.name == 'unknown' && coaster.pictures.length >= 2 == false){
+    if(coaster.name == 'unknown' && coaster.pictures.length > 3 == false){
       console.log(false, coaster)
       newCoaster()
     } else {
@@ -55,10 +56,10 @@ newCoaster()
 });
   return (
     <main className="container d-block" id="vue">
-      <nav><h1>ThrillSeeker</h1></nav>
+      <nav><img src={logo} aly="Red roller coaster in the shape of a heart" /><h1>ThrillSeeker</h1></nav>
       <Carousel>
         <Carousel.Item>
-          <img src={allValues.main} className="d-block" alt={allValues.name}/>
+          <img src={allValues.main} alt={allValues.name}/>
           <figcaption>
           <h2>{allValues.name}</h2>
           <h3>{allValues.city}, {allValues.country}</h3>
