@@ -29,10 +29,29 @@
 
 figcaption{
     position: relative;
-    bottom: 150px
+    bottom: 190px;
+    color: #fff;
+    margin: 10px;
 }
 
 #buttons{
     width: 45vw;
     padding: 0px 40px;
+    position: relative;
+    bottom: 25px;
+}
+
+#buttons button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: none;
+}
+
+.carousel-control-prev, .carousel-control-next {
+z-index: none;
+}
+
+.carousel-control-next{
+    margin-right: 15px;
 }
