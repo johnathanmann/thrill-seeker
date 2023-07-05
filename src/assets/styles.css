@@ -57,6 +57,7 @@ figcaption{
     padding: 0px 80px;
     position: relative;
     bottom: 25px;
+    z-index: 1;
 }
 
 #buttons button{
@@ -83,9 +84,8 @@ z-index: none;
 .fade-out {
     transition: opacity 5s;
     opacity: 0;
-    bottom: 0;
-  }
+}
 
-.z-index{
-    z-index: 15;
+.display-none{
+    display: none;
 }

@@ -57,22 +57,23 @@ function App() {
   }
 
 useEffect(()=>{
+  newCoaster()
   setTimeout(function() {    
     fullyLoaded();
     }, 2000);
   
   function fullyLoaded() {
     document.getElementById("loading").className = "fade-out";
-    document.getElementById("heart").className = "z-index";
-    document.getElementById("x").className = "z-index";
-    newCoaster()
+    setTimeout(function() {    
+      document.getElementById("loading").className = "display-none";
+      }, 5000)
   }
 }, [])
 
   return (
     <main className="container d-block" id="vue">
       <nav><img src={logo} aly="Red roller coaster in the shape of a heart" /><h1>ThrillSeeker</h1></nav>
-      <Carousel>
+      <Carousel fade slide={false} interval={null}>
         <Carousel.Item>
           <img src={allValues.main} alt={allValues.name}/>
           <figcaption>
