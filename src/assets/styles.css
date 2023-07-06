@@ -3,6 +3,7 @@ body{
 }
 #vue{
     width: 50vw;
+    font-family: 'Akatab', sans-serif;
 }
 
 nav img{
@@ -14,7 +15,8 @@ nav img{
 nav h1{
     display: inline;
     vertical-align: middle;
-    color: #4e4e4e;
+    color: #e93d3d;
+    font-weight: 900;
 }
 
 .carousel{
@@ -46,7 +48,7 @@ nav h1{
 
 figcaption{
     position: relative;
-    bottom: 190px;
+    bottom: 200px;
     color: #fff;
     margin: 10px;
     text-shadow: 1px 1px 3px #000;
@@ -56,19 +58,36 @@ figcaption{
     width: 45vw;
     padding: 0px 80px;
     position: relative;
-    bottom: 25px;
+    bottom: 80px;
     z-index: 1;
 }
 
 #buttons button{
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     border-radius: 50px;
     border: none;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
 }
+
+#buttons button:hover{
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+#buttons img{
+    height: 50px;
+    width: 50px;
+}
+
 
 .carousel-control-prev, .carousel-control-next {
 z-index: none;
+}
+
+.carousel-indicators button{
+    display: none;
 }
 
 #loading{
@@ -93,5 +112,6 @@ z-index: none;
 @media (max-width: 769px) {
     .carousel, #vue, .carousel img, #buttons{
         width: 85vw;
+        height: 80vh;
     }
 }
