@@ -45,7 +45,7 @@ function App() {
           make: responseJson.make,
           model: responseJson.model,
           arrangement: responseJson.stats.arrangement,
-          status: responseJson.status,
+          status: responseJson.status.state,
           link: "https://rcdb.com/"+responseJson.link,
           main: responseJson.mainPicture.url,
           image1: responseJson.pictures[1].url,
@@ -59,8 +59,8 @@ function App() {
   }
 
 useEffect(()=>{
-  newCoaster()
-  setTimeout(function() {    
+  setTimeout(function() { 
+    newCoaster()   
     fullyLoaded();
     }, 2000);
   
@@ -74,7 +74,7 @@ useEffect(()=>{
 
   return (
     <main className="mx-auto d-block" id="vue">
-      <nav><img src={logo} aly="Red roller coaster in the shape of a heart" /><h1>ThrillSeeker</h1></nav>
+      <nav><img src={logo} alt="Red roller coaster in the shape of a heart" /><h1>ThrillSeeker</h1></nav>
       <Carousel fade slide={false} interval={null}>
         <Carousel.Item>
           <img src={allValues.main} alt={allValues.name}/>
@@ -92,8 +92,8 @@ useEffect(()=>{
         <Carousel.Item>
           <img src={allValues.image2} className="d-block" alt={allValues.name}/>
           <figcaption>
-          <h1>{allValues.name}</h1>
-          <h2>{allValues.city}, {allValues.country}</h2>
+          <h2>Status: {allValues.status}</h2>
+          <h3><a rel="noreferrer" target="_blank" href={allValues.link}>Learn More</a></h3>
           </figcaption>
         </Carousel.Item>
       </Carousel>
