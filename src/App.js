@@ -32,11 +32,15 @@ function App() {
     .then((responseJson) => {
       // Do something with the response
       console.log(3 > responseJson.pictures.length,  responseJson.pictures.length)
-      if(3 > responseJson.pictures.length || responseJson.stats.arrangement === null){
+      if(3 > responseJson.pictures.length){
         console.log(responseJson)
         console.log("Missing pictures")
         newCoaster()
-      } else {
+      }else if(!responseJson.stats.arrangement){
+        console.log(responseJson)
+        console.log("Missing arrangment")
+        newCoaster()
+      }else {
         console.log(responseJson)
         setAllValues(() => ({
           name: responseJson.name,
