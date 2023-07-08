@@ -54,11 +54,11 @@ figcaption{
     text-shadow: 1px 1px 3px #000;
 }
 
-
 figcaption a{
     color: #fff;
     z-index: 15;
 }
+
 #buttons{
     width: 45vw;
     padding: 0px 80px;
@@ -84,6 +84,7 @@ figcaption a{
 #buttons img{
     height: 50px;
     width: 50px;
+    margin: auto;
 }
 
 
@@ -96,7 +97,7 @@ z-index: none;
 }
 
 #loading{
-    background-color: #000;
+    background-color: #fff;
     height: 100vh;
     width: 100vw;
     z-index: 10;
@@ -105,14 +106,22 @@ z-index: none;
     left: 0;
 }
 
+#loading nav{
+    position: absolute;
+    top: 40vh;
+    margin-left: 20px;
+}
+
 .fade-out {
     transition: opacity 5s;
     opacity: 0;
+    position: absolute;
 }
 
 .display-none{
     display: none;
 }
+
 
 @media (max-width: 769px) {
     .carousel, #vue, .carousel img, #buttons{

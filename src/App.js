@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import { Typewriter } from 'react-simple-typewriter';
 import "./assets/styles.css";
 import logo from "./assets/thrill-seeker-logo.png";
 import x from "./assets/x-btn.png";
@@ -62,13 +63,13 @@ useEffect(()=>{
   setTimeout(function() { 
     newCoaster()   
     fullyLoaded();
-    }, 2000);
+    }, 3000);
   
   function fullyLoaded() {
-    document.getElementById("loading").className = "fade-out";
+    document.getElementById("loading").className = "row d-flex justify-content-center fade-out";
     setTimeout(function() {    
       document.getElementById("loading").className = "display-none";
-      }, 5000)
+      }, 3000)
   }
 }, [])
 
@@ -101,7 +102,11 @@ useEffect(()=>{
         <button onClick={() => newCoaster()}><img src={x} alt="Red x button" /></button>
         <button onClick={() => newCoaster()}><img src={heart} alt="Green heart roller coaster button" /></button>
       </section>
-      <div id="loading">Loading</div>
+      <div className="row d-flex justify-content-center" id="loading">
+        <div className="col-md-6 ">
+        <nav><img src={logo} alt="Red roller coaster in the shape of a heart" /><h1><Typewriter words={["ThrillSeeker"]} deleteSpeed={50} /></h1></nav>
+        </div>
+      </div>
     </main>
   );
 }
