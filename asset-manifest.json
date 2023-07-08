@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/thrill-seeker/static/css/main.c0bd441b.css",
-    "main.js": "/thrill-seeker/static/js/main.e9e7231a.js",
+    "main.css": "/thrill-seeker/static/css/main.5b32db00.css",
+    "main.js": "/thrill-seeker/static/js/main.baddb718.js",
     "static/media/thrill-seeker-logo.png": "/thrill-seeker/static/media/thrill-seeker-logo.0312b37ff77f5185ad8d.png",
     "index.html": "/thrill-seeker/index.html",
-    "main.c0bd441b.css.map": "/thrill-seeker/static/css/main.c0bd441b.css.map",
-    "main.e9e7231a.js.map": "/thrill-seeker/static/js/main.e9e7231a.js.map"
+    "main.5b32db00.css.map": "/thrill-seeker/static/css/main.5b32db00.css.map",
+    "main.baddb718.js.map": "/thrill-seeker/static/js/main.baddb718.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0bd441b.css",
-    "static/js/main.e9e7231a.js"
+    "static/css/main.5b32db00.css",
+    "static/js/main.baddb718.js"
   ]
 }
